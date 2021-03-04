@@ -1,8 +1,8 @@
 # Bioworld- a simple recipe for .NET Core 
-**resharper** 
+1.**resharper key** 
 
-![image](https://github.com/Zhilong-Yang/Bioworld/blob/main/doc/images/resharp-shortkey-navigate.png)
+![resharp-shortkey-edit](https://i.loli.net/2021/03/04/v2rAKmYNGafk49C.png)
 
-
+![resharp-shortkey-navigate](https://i.loli.net/2021/03/04/QxwsSWFCaZI7jhf.png)
 
 
