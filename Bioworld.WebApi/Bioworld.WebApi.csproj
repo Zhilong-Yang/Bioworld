@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Helpers\" />
+    <Folder Include="Requests\" />
+    <Folder Include="Parsers\" />
+    <Folder Include="Formatters\" />
+    <Folder Include="Exceptions\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Open.Serialization.Json.Newtonsoft" Version="2.3.1" />
+    <PackageReference Include="Open.Serialization.Json.System" Version="2.3.1" />
+    <PackageReference Include="Open.Serialization.Json.Utf8Json" Version="2.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\src\Bioworld\Bioworld.csproj" />
+  </ItemGroup>
+
+</Project>
