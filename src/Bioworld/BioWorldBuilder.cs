@@ -8,7 +8,7 @@
 
     public sealed class BioWorldBuilder : IBioWorldBuilder
     {
-        private readonly ConcurrentDictionary<string, bool> _register = new();
+        private readonly ConcurrentDictionary<string, bool> _register = new ConcurrentDictionary<string, bool>();
 
         private readonly List<Action<IServiceProvider>> _buildActions;
 

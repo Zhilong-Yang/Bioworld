@@ -52,7 +52,6 @@
             return model;
         }
 
-
         public static TModel GetOptions<TModel>(this IBioWorldBuilder builder, string settingsSectionName)
             where TModel : new()
         {
@@ -60,7 +59,6 @@
             var configuration = serviceProvider.GetService<IConfiguration>();
             return configuration.GetOptions<TModel>(settingsSectionName);
         }
-
 
         public static string Underscore(this string value)
             => string.Concat(value.Select((x, i) => i > 0 && char.IsUpper(x) ? "_" + x : x.ToString()))
