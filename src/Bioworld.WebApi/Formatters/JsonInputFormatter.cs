@@ -13,8 +13,12 @@
     internal class JsonInputFormatter : IInputFormatter
     {
         private const string EmptyJson = "{}";
-        private readonly ConcurrentDictionary<Type, MethodInfo> _methods = new ConcurrentDictionary<Type, MethodInfo>();
+
+        private readonly ConcurrentDictionary<Type, MethodInfo> _methods
+            = new ConcurrentDictionary<Type, MethodInfo>();
+
         private readonly IJsonSerializer _serializer;
+
         private readonly MethodInfo _deserializeMethod;
 
         public JsonInputFormatter(IJsonSerializer serializer)
@@ -49,7 +53,7 @@
                 json = EmptyJson;
             }
 
-            var result = method.Invoke(_serializer, new object[] { json });
+            var result = method.Invoke(_serializer, new object[] {json});
 
             return await InputFormatterResult.SuccessAsync(result);
         }

@@ -6,8 +6,6 @@
 
   <ItemGroup>
     <Folder Include="Helpers\" />
-    <Folder Include="Requests\" />
-    <Folder Include="Parsers\" />
     <Folder Include="Exceptions\" />
   </ItemGroup>
 

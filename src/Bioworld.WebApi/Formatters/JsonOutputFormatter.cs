@@ -1,12 +1,11 @@
-﻿using Microsoft.AspNetCore.Http;
-using Open.Serialization.Json;
-
-namespace Bioworld.WebApi.Formatters
+﻿namespace Bioworld.WebApi.Formatters
 {
+    using Microsoft.AspNetCore.Http;
+    using Open.Serialization.Json;
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Mvc.Formatters;
 
-    internal class JsonOutputFormatter:IOutputFormatter
+    internal class JsonOutputFormatter : IOutputFormatter
     {
         private readonly IJsonSerializer _serializer;
 
