@@ -39,10 +39,10 @@
             Action<IEndpointConventionBuilder> endpoint = null, bool auth = false,
             string roles = null, params string[] policies) where T : class
         {
-            // var builder = _routeBuilder.MapGet(path, ctx => BuildQueryContext(ctx, context));
-            // endpoint?.Invoke(builder);
-            // ApplyAuthRolesAndPolicies(builder, auth, roles, policies);
-            // AddEndpointDefinition<T>(HttpMethods.Get, path);
+            var builder = _routeBuilder.MapGet(path, ctx => BuildQueryContext(ctx, context));
+            endpoint?.Invoke(builder);
+            ApplyAuthRolesAndPolicies(builder, auth, roles, policies);
+            AddEndpointDefinition<T>(HttpMethods.Get, path);
             return this;
         }
 
@@ -95,6 +95,19 @@
             throw new NotImplementedException();
         }
 
+        private static async Task BuildQueryContext<T>(HttpContext httpContext,
+            Func<T, HttpContext, Task> context = null)
+            where T : class
+        {
+            var request = httpContext.ReadQuery<T>();
+            if (request is null || context is null)
+            {
+                return;
+            }
+
+            await context.Invoke(request, httpContext);
+        }
+
         private static void ApplyAuthRolesAndPolicies(IEndpointConventionBuilder builder, bool auth, string roles,
             params string[] policies)
         {
@@ -133,8 +146,8 @@
             });
         }
 
-        private void AddEndpointDefinition<T>(string method, string path, Type input, Type output)
-            => AddEndpointDefinition(method, path, input, output);
+        private void AddEndpointDefinition<T>(string method, string path)
+            => AddEndpointDefinition(method, path, typeof(T), null);
 
         private void AddEndpointDefinition<T, U>(string method, string path)
             => AddEndpointDefinition(method, path, typeof(T), typeof(U));
