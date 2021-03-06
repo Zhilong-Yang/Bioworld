@@ -5,6 +5,7 @@ namespace Bioworld.Service.Demo
     using System.Threading.Tasks;
     using Bioworld;
     using WebApi;
+    using WebApi.Security;
     using Microsoft.AspNetCore.Builder;
 
     public class Program
@@ -22,12 +23,14 @@ namespace Bioworld.Service.Demo
                 webBuilder.ConfigureServices(services => services
                         .AddBioWorld()
                         .AddErrorHandler<ExceptionToResponseMapper>()
+                        .AddServices()
                         .AddWebApi()
                         .Build())
                     .Configure(app => app
                         .UseBioWorld()
                         .UseErrorHandler()
                         .UseRouting()
+                        .UseCertificateAuthentication()
                         .UseEndpoints(r => r.MapControllers())
                     );
             });

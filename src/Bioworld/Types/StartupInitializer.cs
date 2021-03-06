@@ -7,7 +7,6 @@
     {
         private readonly IList<IInitializer> _initializers = new List<IInitializer>();
 
-
         public async Task InitializeAsync()
         {
             foreach (var initializer in _initializers)

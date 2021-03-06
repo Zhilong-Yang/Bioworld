@@ -9,7 +9,6 @@
     using Microsoft.AspNetCore.Mvc.Formatters;
     using Open.Serialization.Json;
 
-
     internal class JsonInputFormatter : IInputFormatter
     {
         private const string EmptyJson = "{}";

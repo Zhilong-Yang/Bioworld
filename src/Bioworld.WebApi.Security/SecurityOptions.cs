@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace Bioworld.WebApi.Security
+﻿namespace Bioworld.WebApi.Security
 {
+    using System.Collections.Generic;
+
     public class SecurityOptions
     {
         public CertificateOptions Certificate { get; set; }

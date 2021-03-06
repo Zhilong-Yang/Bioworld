@@ -6,7 +6,7 @@
 
     public class DefaultCertificatePermissionValidator : ICertificatePermissionValidator
     {
-        public bool HasAccess(X509Certificate2 certificate, IEnumerable<string> permission, HttpContext context) 
+        public bool HasAccess(X509Certificate2 certificate, IEnumerable<string> permission, HttpContext context)
             => true;
     }
 }

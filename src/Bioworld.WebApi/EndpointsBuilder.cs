@@ -23,7 +23,6 @@
             _routeBuilder = routeBuilder;
         }
 
-
         public IEndpointsBuilder Get(string path, Func<HttpContext, Task> context = null,
             Action<IEndpointConventionBuilder> endpoint = null, bool auth = false, string roles = null,
             params string[] policies)

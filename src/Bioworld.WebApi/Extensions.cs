@@ -12,9 +12,9 @@
     using System.Threading.Tasks;
     using System.Web;
     using Types;
-    using WebApi.Exceptions;
-    using WebApi.Formatters;
-    using WebApi.Requests;
+    using Exceptions;
+    using Formatters;
+    using Requests;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.HttpOverrides;
@@ -25,7 +25,6 @@
     using Newtonsoft.Json.Converters;
     using Newtonsoft.Json.Serialization;
     using Open.Serialization.Json;
-
 
     public static class Extensions
     {
@@ -116,10 +115,11 @@
 
             builder.Services.AddTransient<IRequestDispatcher, RequestDispatcher>();
 
-            if (builder.Services.All(s=>s.ServiceType != typeof(IExceptionToResponseMapper)))
+            if (builder.Services.All(s => s.ServiceType != typeof(IExceptionToResponseMapper)))
             {
                 builder.Services.AddTransient<IExceptionToResponseMapper, EmptyExceptionToResponseMapper>();
             }
+
             return builder;
         }
 

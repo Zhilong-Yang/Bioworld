@@ -47,7 +47,7 @@
         public IServiceProvider Build()
         {
             var serviceProvider = _services.BuildServiceProvider();
-            _buildActions.ForEach(a=>a(serviceProvider));
+            _buildActions.ForEach(a => a(serviceProvider));
             return serviceProvider;
         }
     }

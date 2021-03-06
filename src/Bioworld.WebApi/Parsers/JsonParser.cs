@@ -81,6 +81,7 @@
             {
                 throw new FormatException($"Duplicated key: '{key}'");
             }
+
             _mappings[key] = data.ToString();
         }
 

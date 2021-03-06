@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Bioworld.WebApi.Security\Bioworld.WebApi.Security.csproj" />
     <ProjectReference Include="..\Bioworld.WebApi\Bioworld.WebApi.csproj" />
     <ProjectReference Include="..\Bioworld\Bioworld.csproj" />
   </ItemGroup>
