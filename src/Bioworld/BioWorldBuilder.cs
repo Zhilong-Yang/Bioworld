@@ -14,7 +14,7 @@
 
         private readonly IServiceCollection _services;
 
-        public BioWorldBuilder(IServiceCollection services)
+        private BioWorldBuilder(IServiceCollection services)
         {
             _services = services;
             _buildActions = new List<Action<IServiceProvider>>();

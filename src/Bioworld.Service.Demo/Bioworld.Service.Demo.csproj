@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Bioworld.WebApi\Bioworld.WebApi.csproj" />
+    <ProjectReference Include="..\Bioworld\Bioworld.csproj" />
+  </ItemGroup>
+
+</Project>

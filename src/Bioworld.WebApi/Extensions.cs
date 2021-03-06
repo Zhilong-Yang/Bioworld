@@ -43,6 +43,153 @@
 
         private static bool _bindRequestFromRoute;
 
+        public static IApplicationBuilder UseEndpoints(this IApplicationBuilder app, Action<IEndpointsBuilder> build,
+            bool useAuthorization = true, Action<IApplicationBuilder> middleware = null)
+        {
+            var definitions = app.ApplicationServices.GetRequiredService<WebApiEndpointDefinitions>();
+            app.UseRouting();
+            if (useAuthorization)
+            {
+                app.UseAuthorization();
+            }
+
+            middleware?.Invoke(app);
+            app.UseEndpoints(router => build(new EndpointsBuilder(router, definitions)));
+            return app;
+        }
+
+        public static IBioWorldBuilder AddWebApi(this IBioWorldBuilder builder,
+            Action<IMvcCoreBuilder> configureMvc = null,
+            IJsonSerializer jsonSerializer = null, string sectionName = SectionName)
+        {
+            if (string.IsNullOrWhiteSpace(sectionName))
+            {
+                sectionName = SectionName;
+            }
+
+            if (!builder.TryRegister(RegisterName))
+            {
+                return builder;
+            }
+
+            if (jsonSerializer is null)
+            {
+                var factory = new Open.Serialization.Json.Newtonsoft.JsonSerializerFactory(new JsonSerializerSettings
+                {
+                    ContractResolver = new CamelCasePropertyNamesContractResolver(),
+                    Converters = {new StringEnumConverter()}
+                });
+                jsonSerializer = factory.GetSerializer();
+            }
+
+            if (jsonSerializer.GetType().Namespace?.Contains("Newtonsoft") == true)
+            {
+                builder.Services.Configure<KestrelServerOptions>(o => o.AllowSynchronousIO = true);
+                builder.Services.Configure<IISServerOptions>(o => o.AllowSynchronousIO = true);
+            }
+
+            builder.Services.AddSingleton(jsonSerializer);
+            builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            builder.Services.AddSingleton(new WebApiEndpointDefinitions());
+            var options = builder.GetOptions<WebApiOptions>(sectionName);
+            builder.Services.AddSingleton(options);
+            _bindRequestFromRoute = options.BindRequestFromRoute;
+
+            var mvcCoreBuilder = builder.Services.AddLogging().AddMvcCore();
+
+            mvcCoreBuilder.AddMvcOptions(o =>
+                {
+                    o.OutputFormatters.Clear();
+                    o.OutputFormatters.Add(new JsonOutputFormatter(jsonSerializer));
+                    o.InputFormatters.Clear();
+                    o.InputFormatters.Add(new JsonInputFormatter(jsonSerializer));
+                })
+                .AddDataAnnotations()
+                .AddApiExplorer()
+                .AddAuthorization();
+
+            configureMvc?.Invoke(mvcCoreBuilder);
+            builder.Services.Scan(s =>
+                s.FromAssemblies(AppDomain.CurrentDomain.GetAssemblies()).AddClasses(c =>
+                        c.AssignableTo(typeof(IRequestHandler<,>)).WithoutAttribute(typeof(DecoratorAttribute)))
+                    .AsImplementedInterfaces().WithTransientLifetime());
+
+            builder.Services.AddTransient<IRequestDispatcher, RequestDispatcher>();
+
+            if (builder.Services.All(s=>s.ServiceType != typeof(IExceptionToResponseMapper)))
+            {
+                builder.Services.AddTransient<IExceptionToResponseMapper, EmptyExceptionToResponseMapper>();
+            }
+            return builder;
+        }
+
+        public static IBioWorldBuilder AddErrorHandler<T>(this IBioWorldBuilder builder)
+            where T : class, IExceptionToResponseMapper
+        {
+            builder.Services.AddTransient<ErrorHandlerMiddleware>();
+            builder.Services.AddSingleton<IExceptionToResponseMapper, T>();
+            return builder;
+        }
+
+        public static IApplicationBuilder UseErrorHandler(this IApplicationBuilder builder)
+            => builder.UseMiddleware<ErrorHandlerMiddleware>();
+
+        public static IApplicationBuilder UseAllForwardedHeaders(this IApplicationBuilder builder,
+            bool resetKnownNetworksAndProxies = true)
+        {
+            var forwardingOptions = new ForwardedHeadersOptions()
+            {
+                ForwardedHeaders = ForwardedHeaders.All
+            };
+
+            if (resetKnownNetworksAndProxies)
+            {
+                forwardingOptions.KnownNetworks.Clear();
+                forwardingOptions.KnownProxies.Clear();
+            }
+
+            return builder.UseForwardedHeaders(forwardingOptions);
+        }
+
+        public static Task<TResult> DispatchAsync<TRequest, TResult>(this HttpContext httpContext, TRequest request)
+            where TRequest : class, IRequest =>
+            httpContext.RequestServices.GetRequiredService<IRequestHandler<TRequest, TResult>>().HandleAsync(request);
+
+        public static T BindId<T>(this T model, Expression<Func<T, object>> expression, object value)
+            => model.Bind(expression, value);
+
+        public static T BindId<T>(this T model, Expression<Func<T, Guid>> expression)
+            => model.Bind(expression, Guid.NewGuid());
+
+        public static T BindId<T>(this T model, Expression<Func<T, string>> expression)
+            => model.Bind(expression, Guid.NewGuid().ToString("N"));
+
+        private static TModel Bind<TModel, TProperty>(this TModel model, Expression<Func<TModel, TProperty>> expression,
+            object value)
+        {
+            if (!(expression.Body is MemberExpression memberExpression))
+            {
+                memberExpression = ((UnaryExpression) expression.Body).Operand as MemberExpression;
+            }
+
+            if (memberExpression is null)
+            {
+                throw new InvalidOperationException("Invalid member expression");
+            }
+
+            var propertyName = memberExpression.Member.Name.ToLowerInvariant();
+            var modelType = model.GetType();
+            var field = modelType.GetFields(BindingFlags.Instance | BindingFlags.NonPublic)
+                .SingleOrDefault(x => x.Name.ToLowerInvariant().StartsWith($"<${propertyName}>"));
+
+            if (field is null)
+            {
+                return model;
+            }
+
+            field.SetValue(model, value);
+            return model;
+        }
 
         public static Task Ok(this HttpResponse response, object data = null)
         {
@@ -136,7 +283,7 @@
             var serializer = response.HttpContext.RequestServices.GetRequiredService<IJsonSerializer>();
             await serializer.SerializeAsync(response.Body, value);
         }
-        
+
         public static async Task<T> ReadJsonAsync<T>(this HttpContext httpContext)
         {
             if (httpContext.Request.Body is null)
@@ -150,7 +297,8 @@
             try
             {
                 var request = httpContext.Request;
-                var payload = await httpContext.RequestServices.GetRequiredService<IJsonSerializer>().DeserializeAsync<T>(request.Body);
+                var payload = await httpContext.RequestServices.GetRequiredService<IJsonSerializer>()
+                    .DeserializeAsync<T>(request.Body);
                 if (_bindRequestFromRoute && HasRouteData(request))
                 {
                     var values = request.HttpContext.GetRouteData().Values;
@@ -216,6 +364,7 @@
             {
                 return serializer.Deserialize<T>(EmptyJsonObject);
             }
+
             var serialized = serializer.Serialize(values.ToDictionary(k => k.Key, k => k.Value))
                 ?.Replace("\\\"", "\"")
                 .Replace("\"{", "{")

@@ -12,7 +12,7 @@
     {
         private const string SectionName = "app";
 
-        public static IBioWorldBuilder AddBioWorldBuilder(this IServiceCollection services,
+        public static IBioWorldBuilder AddBioWorld(this IServiceCollection services,
             string sectionName = SectionName)
         {
             if (string.IsNullOrEmpty(sectionName))
@@ -31,7 +31,7 @@
             }
 
             var version = options.DisplayVersion ? $"{options.Version}" : string.Empty;
-            Console.WriteLine(Figgle.FiggleFonts.Doom.Render($"{options.Name}{version}"));
+            Console.WriteLine(Figgle.FiggleFonts.Doom.Render($"{options.Name} {version}"));
             return builder;
         }
 

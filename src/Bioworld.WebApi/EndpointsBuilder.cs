@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Runtime.Serialization;
     using System.Threading.Tasks;
-    using WebApi.Helpers;
+    using Helpers;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Http;
@@ -17,7 +17,7 @@
 
         private readonly IEndpointRouteBuilder _routeBuilder;
 
-        public EndpointsBuilder(WebApiEndpointDefinitions definitions, IEndpointRouteBuilder routeBuilder)
+        public EndpointsBuilder(IEndpointRouteBuilder routeBuilder, WebApiEndpointDefinitions definitions)
         {
             _definitions = definitions;
             _routeBuilder = routeBuilder;

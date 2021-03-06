@@ -6,8 +6,7 @@
     using Microsoft.AspNetCore.Http;
     using Microsoft.Extensions.Logging;
     using Open.Serialization.Json;
-
-
+    
     internal sealed class ErrorHandlerMiddleware : IMiddleware
     {
         private readonly IExceptionToResponseMapper _exceptionToResponseMapper;
