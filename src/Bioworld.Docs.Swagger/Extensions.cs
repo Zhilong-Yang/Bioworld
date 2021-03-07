@@ -59,7 +59,7 @@
         public static IApplicationBuilder UseSwaggerDocs(this IApplicationBuilder builder)
         {
             var options = builder.ApplicationServices.GetService<SwaggerOptions>();
-            if ((bool) !options?.Enabled)
+            if (!options.Enabled)
             {
                 return builder;
             }
