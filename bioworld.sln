@@ -11,7 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bioworld.WebApi", "src\Biow
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bioworld.Service.Demo", "src\Bioworld.Service.Demo\Bioworld.Service.Demo.csproj", "{920925B5-41A9-43DC-9D6A-7B2B6C174C59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bioworld.WebApi.Security", "src\Bioworld.WebApi.Security\Bioworld.WebApi.Security.csproj", "{A1BC04AD-BBFD-423D-82D4-68E41228BB73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bioworld.WebApi.Security", "src\Bioworld.WebApi.Security\Bioworld.WebApi.Security.csproj", "{A1BC04AD-BBFD-423D-82D4-68E41228BB73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bioworld.WebApi.Swagger", "src\Bioworld.WebApi.Swagger\Bioworld.WebApi.Swagger.csproj", "{138B3220-494B-4861-ACE1-7A57AF83BDFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bioworld.Docs.Swagger", "src\Bioworld.Docs.Swagger\Bioworld.Docs.Swagger.csproj", "{ACEBED6A-19F7-472B-A103-DEE7C6DF62A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -83,6 +87,30 @@ Global
 		{A1BC04AD-BBFD-423D-82D4-68E41228BB73}.Release|x64.Build.0 = Release|Any CPU
 		{A1BC04AD-BBFD-423D-82D4-68E41228BB73}.Release|x86.ActiveCfg = Release|Any CPU
 		{A1BC04AD-BBFD-423D-82D4-68E41228BB73}.Release|x86.Build.0 = Release|Any CPU
+		{138B3220-494B-4861-ACE1-7A57AF83BDFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{138B3220-494B-4861-ACE1-7A57AF83BDFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{138B3220-494B-4861-ACE1-7A57AF83BDFB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{138B3220-494B-4861-ACE1-7A57AF83BDFB}.Debug|x64.Build.0 = Debug|Any CPU
+		{138B3220-494B-4861-ACE1-7A57AF83BDFB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{138B3220-494B-4861-ACE1-7A57AF83BDFB}.Debug|x86.Build.0 = Debug|Any CPU
+		{138B3220-494B-4861-ACE1-7A57AF83BDFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{138B3220-494B-4861-ACE1-7A57AF83BDFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{138B3220-494B-4861-ACE1-7A57AF83BDFB}.Release|x64.ActiveCfg = Release|Any CPU
+		{138B3220-494B-4861-ACE1-7A57AF83BDFB}.Release|x64.Build.0 = Release|Any CPU
+		{138B3220-494B-4861-ACE1-7A57AF83BDFB}.Release|x86.ActiveCfg = Release|Any CPU
+		{138B3220-494B-4861-ACE1-7A57AF83BDFB}.Release|x86.Build.0 = Release|Any CPU
+		{ACEBED6A-19F7-472B-A103-DEE7C6DF62A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACEBED6A-19F7-472B-A103-DEE7C6DF62A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACEBED6A-19F7-472B-A103-DEE7C6DF62A9}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{ACEBED6A-19F7-472B-A103-DEE7C6DF62A9}.Debug|x64.Build.0 = Debug|Any CPU
+		{ACEBED6A-19F7-472B-A103-DEE7C6DF62A9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{ACEBED6A-19F7-472B-A103-DEE7C6DF62A9}.Debug|x86.Build.0 = Debug|Any CPU
+		{ACEBED6A-19F7-472B-A103-DEE7C6DF62A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACEBED6A-19F7-472B-A103-DEE7C6DF62A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACEBED6A-19F7-472B-A103-DEE7C6DF62A9}.Release|x64.ActiveCfg = Release|Any CPU
+		{ACEBED6A-19F7-472B-A103-DEE7C6DF62A9}.Release|x64.Build.0 = Release|Any CPU
+		{ACEBED6A-19F7-472B-A103-DEE7C6DF62A9}.Release|x86.ActiveCfg = Release|Any CPU
+		{ACEBED6A-19F7-472B-A103-DEE7C6DF62A9}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

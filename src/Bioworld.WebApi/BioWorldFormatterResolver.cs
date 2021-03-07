@@ -5,9 +5,9 @@
     using Utf8Json;
     using Utf8Json.Resolvers;
 
-    public class ConveyFormatterResolver : IJsonFormatterResolver
+    public class BioWorldFormatterResolver : IJsonFormatterResolver
     {
-        public static readonly IJsonFormatterResolver Instance = new ConveyFormatterResolver();
+        public static readonly IJsonFormatterResolver Instance = new BioWorldFormatterResolver();
 
         private static readonly IJsonFormatterResolver[] Resolvers =
         {
