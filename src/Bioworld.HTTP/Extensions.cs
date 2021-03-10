@@ -13,7 +13,7 @@
         private const string SectionName = "httpClient";
         private const string RegistryName = "http.client";
 
-        public static IBioWorldBuilder AddHttpClient(this IBioWorldBuilder builder, string clientName = "convey",
+        public static IBioWorldBuilder AddHttpClient(this IBioWorldBuilder builder, string clientName = "bioworld",
             IEnumerable<string> maskedRequestUrlParts = null, string sectionName = SectionName,
             Action<IHttpClientBuilder> httpClientBuilder = null)
         {

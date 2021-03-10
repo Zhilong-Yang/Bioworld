@@ -23,9 +23,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bioworld.CQRS.Commands", "s
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bioworld.WebApi.CQRS", "src\Bioworld.WebApi.CQRS\Bioworld.WebApi.CQRS.csproj", "{62DA7BD7-6845-4291-9A0C-2A7D70D5E720}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bioworld.HTTP", "src\Bioworld.HTTP\Bioworld.HTTP.csproj", "{6C5DF02D-04E2-4188-81C2-071AD6CA7E8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bioworld.HTTP", "src\Bioworld.HTTP\Bioworld.HTTP.csproj", "{6C5DF02D-04E2-4188-81C2-071AD6CA7E8A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bioworld.CQRS.Events", "src\Bioworld.CQRS.Events\Bioworld.CQRS.Events.csproj", "{30569CFA-583C-4EE4-A686-F24B0F40B069}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bioworld.Logging", "src\Bioworld.Logging\Bioworld.Logging.csproj", "{841481FE-79CE-46EB-BC30-C9CB3CBE34A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -181,6 +183,18 @@ Global
 		{30569CFA-583C-4EE4-A686-F24B0F40B069}.Release|x64.Build.0 = Release|Any CPU
 		{30569CFA-583C-4EE4-A686-F24B0F40B069}.Release|x86.ActiveCfg = Release|Any CPU
 		{30569CFA-583C-4EE4-A686-F24B0F40B069}.Release|x86.Build.0 = Release|Any CPU
+		{841481FE-79CE-46EB-BC30-C9CB3CBE34A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{841481FE-79CE-46EB-BC30-C9CB3CBE34A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{841481FE-79CE-46EB-BC30-C9CB3CBE34A3}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{841481FE-79CE-46EB-BC30-C9CB3CBE34A3}.Debug|x64.Build.0 = Debug|Any CPU
+		{841481FE-79CE-46EB-BC30-C9CB3CBE34A3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{841481FE-79CE-46EB-BC30-C9CB3CBE34A3}.Debug|x86.Build.0 = Debug|Any CPU
+		{841481FE-79CE-46EB-BC30-C9CB3CBE34A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{841481FE-79CE-46EB-BC30-C9CB3CBE34A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{841481FE-79CE-46EB-BC30-C9CB3CBE34A3}.Release|x64.ActiveCfg = Release|Any CPU
+		{841481FE-79CE-46EB-BC30-C9CB3CBE34A3}.Release|x64.Build.0 = Release|Any CPU
+		{841481FE-79CE-46EB-BC30-C9CB3CBE34A3}.Release|x86.ActiveCfg = Release|Any CPU
+		{841481FE-79CE-46EB-BC30-C9CB3CBE34A3}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
