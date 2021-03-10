@@ -5,9 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Bioworld.CQRS.Commands\Bioworld.CQRS.Commands.csproj" />
+    <ProjectReference Include="..\Bioworld.CQRS.Events\Bioworld.CQRS.Events.csproj" />
+    <ProjectReference Include="..\Bioworld.CQRS.Queries\Bioworld.CQRS.Queries.csproj" />
+    <ProjectReference Include="..\Bioworld.Docs.Swagger\Bioworld.Docs.Swagger.csproj" />
+    <ProjectReference Include="..\Bioworld.WebApi.CQRS\Bioworld.WebApi.CQRS.csproj" />
     <ProjectReference Include="..\Bioworld.WebApi.Security\Bioworld.WebApi.Security.csproj" />
+    <ProjectReference Include="..\Bioworld.WebApi.Swagger\Bioworld.WebApi.Swagger.csproj" />
     <ProjectReference Include="..\Bioworld.WebApi\Bioworld.WebApi.csproj" />
     <ProjectReference Include="..\Bioworld\Bioworld.csproj" />
   </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 
 </Project>

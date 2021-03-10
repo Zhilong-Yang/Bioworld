@@ -9,8 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Bioworld.CQRS.Events\Bioworld.CQRS.Events.csproj" />
     <ProjectReference Include="..\Bioworld.CQRS.Commands\Bioworld.CQRS.Commands.csproj" />
+    <ProjectReference Include="..\Bioworld.CQRS.Events\Bioworld.CQRS.Events.csproj" />
     <ProjectReference Include="..\Bioworld.CQRS.Queries\Bioworld.CQRS.Queries.csproj" />
     <ProjectReference Include="..\Bioworld.WebApi\Bioworld.WebApi.csproj" />
   </ItemGroup>

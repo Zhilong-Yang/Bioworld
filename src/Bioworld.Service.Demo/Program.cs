@@ -1,9 +1,16 @@
 namespace Bioworld.Service.Demo
 {
+    using Bioworld;
+    using CQRS.Commands;
+    using CQRS.Queries;
+    using Docs.Swagger;
+    using WebApi.Swagger;
+    using Bioworld.CQRS.Events;
+    using Bioworld.WebApi.CQRS;
+    using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.Hosting;
     using System.Threading.Tasks;
-    using Bioworld;
     using WebApi;
     using WebApi.Security;
     using Microsoft.AspNetCore.Builder;
@@ -24,7 +31,15 @@ namespace Bioworld.Service.Demo
                         .AddBioWorld()
                         .AddErrorHandler<ExceptionToResponseMapper>()
                         .AddServices()
+                        .AddCommandHandlers()
+                        .AddEventHandlers()
+                        .AddQueryHandlers()
+                        .AddInMemoryCommandDispatcher()
+                        .AddInMemoryEventDispatcher()
+                        .AddInMemoryQueryDispatcher()
                         .AddWebApi()
+                        .AddSwaggerDocs()
+                        .AddWebApiSwaggerDocs()
                         .Build())
                     .Configure(app => app
                         .UseBioWorld()
@@ -32,6 +47,10 @@ namespace Bioworld.Service.Demo
                         .UseRouting()
                         .UseCertificateAuthentication()
                         .UseEndpoints(r => r.MapControllers())
+                        .UseDispatcherEndpoints(endpoints => endpoints
+                            .Get("", ctx => ctx.Response.WriteAsync("Orders Service"))
+                            .Get("ping", ctx => ctx.Response.WriteAsync("pong")))
+                        .UseSwaggerDocs()
                     );
             });
     }
