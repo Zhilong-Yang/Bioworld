@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
-    using Logging.Options;
+    using Options;
     using Types;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
@@ -84,7 +84,6 @@
             LoggingLevelSwitch.MinimumLevel = GetLogEventLevel(loggerOptions.Level);
 
             loggerConfiguration.Enrich.FromLogContext()
-                .MinimumLevel.ControlledBy(LoggingLevelSwitch)
                 .MinimumLevel.ControlledBy(LoggingLevelSwitch)
                 .Enrich.WithProperty("Environment", environmentName)
                 .Enrich.WithProperty("Application", appOptions.Service)
