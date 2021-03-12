@@ -33,9 +33,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bioworld.Auth", "src\Biowor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bioworld.Auth.Distributed", "src\Bioworld.Auth.Distributed\Bioworld.Auth.Distributed.csproj", "{0775632A-42D6-48F8-B796-9B87859AB656}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bioworld.Security", "src\Bioworld.Security\Bioworld.Security.csproj", "{EF190C90-64A0-425F-8420-EEE26566F759}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bioworld.Security", "src\Bioworld.Security\Bioworld.Security.csproj", "{EF190C90-64A0-425F-8420-EEE26566F759}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bioworld.Discovery.Consul", "Bioworld.Discovery.Consul\Bioworld.Discovery.Consul.csproj", "{01CD7A33-4408-42CD-AA7C-D7CC20D66BC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bioworld.Discovery.Consul", "src\Bioworld.Discovery.Consul\Bioworld.Discovery.Consul.csproj", "{A8866A1A-C465-448B-BE29-9DBDF157396D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -239,18 +239,18 @@ Global
 		{EF190C90-64A0-425F-8420-EEE26566F759}.Release|x64.Build.0 = Release|Any CPU
 		{EF190C90-64A0-425F-8420-EEE26566F759}.Release|x86.ActiveCfg = Release|Any CPU
 		{EF190C90-64A0-425F-8420-EEE26566F759}.Release|x86.Build.0 = Release|Any CPU
-		{01CD7A33-4408-42CD-AA7C-D7CC20D66BC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{01CD7A33-4408-42CD-AA7C-D7CC20D66BC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{01CD7A33-4408-42CD-AA7C-D7CC20D66BC1}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{01CD7A33-4408-42CD-AA7C-D7CC20D66BC1}.Debug|x64.Build.0 = Debug|Any CPU
-		{01CD7A33-4408-42CD-AA7C-D7CC20D66BC1}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{01CD7A33-4408-42CD-AA7C-D7CC20D66BC1}.Debug|x86.Build.0 = Debug|Any CPU
-		{01CD7A33-4408-42CD-AA7C-D7CC20D66BC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{01CD7A33-4408-42CD-AA7C-D7CC20D66BC1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{01CD7A33-4408-42CD-AA7C-D7CC20D66BC1}.Release|x64.ActiveCfg = Release|Any CPU
-		{01CD7A33-4408-42CD-AA7C-D7CC20D66BC1}.Release|x64.Build.0 = Release|Any CPU
-		{01CD7A33-4408-42CD-AA7C-D7CC20D66BC1}.Release|x86.ActiveCfg = Release|Any CPU
-		{01CD7A33-4408-42CD-AA7C-D7CC20D66BC1}.Release|x86.Build.0 = Release|Any CPU
+		{A8866A1A-C465-448B-BE29-9DBDF157396D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8866A1A-C465-448B-BE29-9DBDF157396D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8866A1A-C465-448B-BE29-9DBDF157396D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A8866A1A-C465-448B-BE29-9DBDF157396D}.Debug|x64.Build.0 = Debug|Any CPU
+		{A8866A1A-C465-448B-BE29-9DBDF157396D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A8866A1A-C465-448B-BE29-9DBDF157396D}.Debug|x86.Build.0 = Debug|Any CPU
+		{A8866A1A-C465-448B-BE29-9DBDF157396D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8866A1A-C465-448B-BE29-9DBDF157396D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8866A1A-C465-448B-BE29-9DBDF157396D}.Release|x64.ActiveCfg = Release|Any CPU
+		{A8866A1A-C465-448B-BE29-9DBDF157396D}.Release|x64.Build.0 = Release|Any CPU
+		{A8866A1A-C465-448B-BE29-9DBDF157396D}.Release|x86.ActiveCfg = Release|Any CPU
+		{A8866A1A-C465-448B-BE29-9DBDF157396D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

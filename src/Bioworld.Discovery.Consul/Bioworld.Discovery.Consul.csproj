@@ -10,8 +10,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\Bioworld.HTTP\Bioworld.HTTP.csproj" />
-    <ProjectReference Include="..\src\Bioworld\Bioworld.csproj" />
+    <ProjectReference Include="..\Bioworld.HTTP\Bioworld.HTTP.csproj" />
+    <ProjectReference Include="..\Bioworld\Bioworld.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Builders\" />
   </ItemGroup>
 
 </Project>

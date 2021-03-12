@@ -22,6 +22,8 @@
 
             var bytes = JsonSerializer.SerializeToUtf8Bytes(data);
             var signature = Sign(bytes, certificate);
+
+            return BitConverter.ToString(signature).Replace("-", string.Empty);
         }
 
         public bool Verify(object data, X509Certificate2 certificate, string signature, bool throwException = false)

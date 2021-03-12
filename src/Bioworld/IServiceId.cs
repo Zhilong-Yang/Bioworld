@@ -1,6 +1,6 @@
 ﻿namespace Bioworld
 {
-    interface IServiceId
+    public interface IServiceId
     {
         string Id { get; }
     }
