@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
-    using Discovery.Consul.Models;
+    using Models;
 
     internal sealed class ConsulServicesRegistry : IConsulServicesRegistry
     {

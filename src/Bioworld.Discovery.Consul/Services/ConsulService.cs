@@ -5,7 +5,7 @@
     using System.Text;
     using System.Text.Json;
     using System.Threading.Tasks;
-    using Discovery.Consul.Models;
+    using Models;
 
     internal sealed class ConsulService : IConsulService
     {
@@ -18,17 +18,24 @@
             _client = client;
         }
 
-        public Task<HttpResponseMessage> RegisterServiceAsync(ServiceRegistration registration) => 
-            _client.PutAsync(GetEndpoint("agent/service/register"), GetPayload(registration));
+        public Task<HttpResponseMessage> RegisterServiceAsync(ServiceRegistration registration)
+            => _client.PutAsync(GetEndpoint("agent/service/register"), GetPayload(registration));
 
         public Task<HttpResponseMessage> DeregisterServiceAsync(string id)
-        {
-            throw new System.NotImplementedException();
-        }
+            => _client.PutAsync(GetEndpoint($"agent/service/deregister/{id}"), EmptyRequest);
 
-        public Task<IDictionary<string, ServiceAgent>> GetServiceAgentsAsync(string service = null)
+        public async Task<IDictionary<string, ServiceAgent>> GetServiceAgentsAsync(string service = null)
         {
-            throw new System.NotImplementedException();
+            var filter = string.IsNullOrWhiteSpace(service) ? string.Empty : $"?filter=Service==\"{service}\"";
+            var response = await _client.GetAsync(GetEndpoint($"agent/services{filter}"));
+            if (!response.IsSuccessStatusCode)
+            {
+                return new Dictionary<string, ServiceAgent>();
+            }
+
+            var content = await response.Content.ReadAsStringAsync();
+
+            return JsonSerializer.Deserialize<IDictionary<string, ServiceAgent>>(content);
         }
 
         private static StringContent GetPayload(object request)
