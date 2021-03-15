@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Bioworld.Discovery.Consul\Bioworld.Discovery.Consul.csproj" />
+    <ProjectReference Include="..\Bioworld.HTTP\Bioworld.HTTP.csproj" />
+    <ProjectReference Include="..\Bioworld\Bioworld.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Http\" />
+  </ItemGroup>
+
+</Project>
