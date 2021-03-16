@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Bioworld.CQRS.Commands\Bioworld.CQRS.Commands.csproj" />
+    <ProjectReference Include="..\Bioworld.CQRS.Events\Bioworld.CQRS.Events.csproj" />
+    <ProjectReference Include="..\Bioworld.MessageBrokers\Bioworld.MessageBrokers.csproj" />
+  </ItemGroup>
+
+</Project>
