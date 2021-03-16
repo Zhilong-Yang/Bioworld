@@ -7,6 +7,6 @@
         string MessageId { get; }
         string CorrelationId { get; }
         long Timestamp { get; }
-        IDictionary<string, object> Header { get; }
+        IDictionary<string, object> Headers { get; }
     }
 }

@@ -4,9 +4,9 @@
 
     public class MessageProperties : IMessageProperties
     {
-        public string MessageId { get; }
-        public string CorrelationId { get; }
-        public long Timestamp { get; }
-        public IDictionary<string, object> Header { get; }
+        public string MessageId { get; set; }
+        public string CorrelationId { get; set; }
+        public long Timestamp { get; set; }
+        public IDictionary<string, object> Headers { get; set; }
     }
 }
