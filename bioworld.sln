@@ -45,9 +45,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bioworld.MessageBrokers", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bioworld.MessageBrokers.RabbitMQ", "src\Bioworld.MessageBrokers.RabbitMQ\Bioworld.MessageBrokers.RabbitMQ.csproj", "{F73219CC-23C0-498E-8BA6-C944794A2386}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bioworld.MessageBrokers.CQRS", "src\Bioworld.MessageBrokers.CQRS\Bioworld.MessageBrokers.CQRS.csproj", "{787EF023-BDAB-4666-B299-7CE00FC85EDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bioworld.MessageBrokers.CQRS", "src\Bioworld.MessageBrokers.CQRS\Bioworld.MessageBrokers.CQRS.csproj", "{787EF023-BDAB-4666-B299-7CE00FC85EDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bioworld.Persistence.MongoDB", "src\Bioworld.Persistence.MongoDB\Bioworld.Persistence.MongoDB.csproj", "{2A2EA7CF-4037-41A7-973C-AD9C66D63F26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bioworld.Persistence.MongoDB", "src\Bioworld.Persistence.MongoDB\Bioworld.Persistence.MongoDB.csproj", "{2A2EA7CF-4037-41A7-973C-AD9C66D63F26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bioworld.MessageBrokers.RawRabbit", "src\Bioworld.MessageBrokers.RawRabbit\Bioworld.MessageBrokers.RawRabbit.csproj", "{8728EFCD-2623-4389-B838-22E94F49150C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bioworld.Secrets.Vault", "src\Bioworld.Secrets.Vault\Bioworld.Secrets.Vault.csproj", "{35E59B7B-E296-44FD-AE11-E4B5009B24BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -335,6 +339,30 @@ Global
 		{2A2EA7CF-4037-41A7-973C-AD9C66D63F26}.Release|x64.Build.0 = Release|Any CPU
 		{2A2EA7CF-4037-41A7-973C-AD9C66D63F26}.Release|x86.ActiveCfg = Release|Any CPU
 		{2A2EA7CF-4037-41A7-973C-AD9C66D63F26}.Release|x86.Build.0 = Release|Any CPU
+		{8728EFCD-2623-4389-B838-22E94F49150C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8728EFCD-2623-4389-B838-22E94F49150C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8728EFCD-2623-4389-B838-22E94F49150C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8728EFCD-2623-4389-B838-22E94F49150C}.Debug|x64.Build.0 = Debug|Any CPU
+		{8728EFCD-2623-4389-B838-22E94F49150C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8728EFCD-2623-4389-B838-22E94F49150C}.Debug|x86.Build.0 = Debug|Any CPU
+		{8728EFCD-2623-4389-B838-22E94F49150C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8728EFCD-2623-4389-B838-22E94F49150C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8728EFCD-2623-4389-B838-22E94F49150C}.Release|x64.ActiveCfg = Release|Any CPU
+		{8728EFCD-2623-4389-B838-22E94F49150C}.Release|x64.Build.0 = Release|Any CPU
+		{8728EFCD-2623-4389-B838-22E94F49150C}.Release|x86.ActiveCfg = Release|Any CPU
+		{8728EFCD-2623-4389-B838-22E94F49150C}.Release|x86.Build.0 = Release|Any CPU
+		{35E59B7B-E296-44FD-AE11-E4B5009B24BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35E59B7B-E296-44FD-AE11-E4B5009B24BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35E59B7B-E296-44FD-AE11-E4B5009B24BE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{35E59B7B-E296-44FD-AE11-E4B5009B24BE}.Debug|x64.Build.0 = Debug|Any CPU
+		{35E59B7B-E296-44FD-AE11-E4B5009B24BE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{35E59B7B-E296-44FD-AE11-E4B5009B24BE}.Debug|x86.Build.0 = Debug|Any CPU
+		{35E59B7B-E296-44FD-AE11-E4B5009B24BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35E59B7B-E296-44FD-AE11-E4B5009B24BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35E59B7B-E296-44FD-AE11-E4B5009B24BE}.Release|x64.ActiveCfg = Release|Any CPU
+		{35E59B7B-E296-44FD-AE11-E4B5009B24BE}.Release|x64.Build.0 = Release|Any CPU
+		{35E59B7B-E296-44FD-AE11-E4B5009B24BE}.Release|x86.ActiveCfg = Release|Any CPU
+		{35E59B7B-E296-44FD-AE11-E4B5009B24BE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
