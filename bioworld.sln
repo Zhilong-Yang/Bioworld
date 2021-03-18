@@ -53,6 +53,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bioworld.MessageBrokers.Raw
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bioworld.Secrets.Vault", "src\Bioworld.Secrets.Vault\Bioworld.Secrets.Vault.csproj", "{35E59B7B-E296-44FD-AE11-E4B5009B24BE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bioworld.HTTP.RestEase", "src\Bioworld.HTTP.RestEase\Bioworld.HTTP.RestEase.csproj", "{CF87A2B8-DE53-46FC-BD14-F761D9CBE8C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -363,6 +365,18 @@ Global
 		{35E59B7B-E296-44FD-AE11-E4B5009B24BE}.Release|x64.Build.0 = Release|Any CPU
 		{35E59B7B-E296-44FD-AE11-E4B5009B24BE}.Release|x86.ActiveCfg = Release|Any CPU
 		{35E59B7B-E296-44FD-AE11-E4B5009B24BE}.Release|x86.Build.0 = Release|Any CPU
+		{CF87A2B8-DE53-46FC-BD14-F761D9CBE8C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF87A2B8-DE53-46FC-BD14-F761D9CBE8C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF87A2B8-DE53-46FC-BD14-F761D9CBE8C7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CF87A2B8-DE53-46FC-BD14-F761D9CBE8C7}.Debug|x64.Build.0 = Debug|Any CPU
+		{CF87A2B8-DE53-46FC-BD14-F761D9CBE8C7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CF87A2B8-DE53-46FC-BD14-F761D9CBE8C7}.Debug|x86.Build.0 = Debug|Any CPU
+		{CF87A2B8-DE53-46FC-BD14-F761D9CBE8C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF87A2B8-DE53-46FC-BD14-F761D9CBE8C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF87A2B8-DE53-46FC-BD14-F761D9CBE8C7}.Release|x64.ActiveCfg = Release|Any CPU
+		{CF87A2B8-DE53-46FC-BD14-F761D9CBE8C7}.Release|x64.Build.0 = Release|Any CPU
+		{CF87A2B8-DE53-46FC-BD14-F761D9CBE8C7}.Release|x86.ActiveCfg = Release|Any CPU
+		{CF87A2B8-DE53-46FC-BD14-F761D9CBE8C7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
