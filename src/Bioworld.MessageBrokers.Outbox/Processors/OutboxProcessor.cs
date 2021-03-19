@@ -77,9 +77,9 @@
             return Task.CompletedTask;
         }
 
-        private void SendOutboxMessages(object? state)
+        private void SendOutboxMessages(object state)
         {
-            // _ = SendOutboxMessagesAsync();
+            _ = SendOutboxMessagesAsync();
         }
 
         private async Task SendOutboxMessagesAsync()
