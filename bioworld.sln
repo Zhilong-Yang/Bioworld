@@ -49,13 +49,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bioworld.MessageBrokers.CQR
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bioworld.Persistence.MongoDB", "src\Bioworld.Persistence.MongoDB\Bioworld.Persistence.MongoDB.csproj", "{2A2EA7CF-4037-41A7-973C-AD9C66D63F26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bioworld.MessageBrokers.RawRabbit", "src\Bioworld.MessageBrokers.RawRabbit\Bioworld.MessageBrokers.RawRabbit.csproj", "{8728EFCD-2623-4389-B838-22E94F49150C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bioworld.MessageBrokers.RawRabbit", "src\Bioworld.MessageBrokers.RawRabbit\Bioworld.MessageBrokers.RawRabbit.csproj", "{8728EFCD-2623-4389-B838-22E94F49150C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bioworld.Secrets.Vault", "src\Bioworld.Secrets.Vault\Bioworld.Secrets.Vault.csproj", "{35E59B7B-E296-44FD-AE11-E4B5009B24BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bioworld.Secrets.Vault", "src\Bioworld.Secrets.Vault\Bioworld.Secrets.Vault.csproj", "{35E59B7B-E296-44FD-AE11-E4B5009B24BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bioworld.HTTP.RestEase", "src\Bioworld.HTTP.RestEase\Bioworld.HTTP.RestEase.csproj", "{CF87A2B8-DE53-46FC-BD14-F761D9CBE8C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bioworld.HTTP.RestEase", "src\Bioworld.HTTP.RestEase\Bioworld.HTTP.RestEase.csproj", "{CF87A2B8-DE53-46FC-BD14-F761D9CBE8C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bioworld.Tracing.Jaeger", "src\Bioworld.Tracing.Jaeger\Bioworld.Tracing.Jaeger.csproj", "{2AD947F6-23EA-4432-8FB4-76FBE4CDCB9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bioworld.Tracing.Jaeger", "src\Bioworld.Tracing.Jaeger\Bioworld.Tracing.Jaeger.csproj", "{2AD947F6-23EA-4432-8FB4-76FBE4CDCB9B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bioworld.Tracing.Jaeger.RabbitMQ", "src\Bioworld.Tracing.Jaeger.RabbitMQ\Bioworld.Tracing.Jaeger.RabbitMQ.csproj", "{9AA47C1F-2FF3-48F4-8E88-1B91E2DDFAD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bioworld.MessageBrokers.Outbox", "src\Bioworld.MessageBrokers.Outbox\Bioworld.MessageBrokers.Outbox.csproj", "{C3518FC0-881D-458B-A0E2-D687B5838D24}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -391,6 +395,30 @@ Global
 		{2AD947F6-23EA-4432-8FB4-76FBE4CDCB9B}.Release|x64.Build.0 = Release|Any CPU
 		{2AD947F6-23EA-4432-8FB4-76FBE4CDCB9B}.Release|x86.ActiveCfg = Release|Any CPU
 		{2AD947F6-23EA-4432-8FB4-76FBE4CDCB9B}.Release|x86.Build.0 = Release|Any CPU
+		{9AA47C1F-2FF3-48F4-8E88-1B91E2DDFAD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AA47C1F-2FF3-48F4-8E88-1B91E2DDFAD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AA47C1F-2FF3-48F4-8E88-1B91E2DDFAD2}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{9AA47C1F-2FF3-48F4-8E88-1B91E2DDFAD2}.Debug|x64.Build.0 = Debug|Any CPU
+		{9AA47C1F-2FF3-48F4-8E88-1B91E2DDFAD2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9AA47C1F-2FF3-48F4-8E88-1B91E2DDFAD2}.Debug|x86.Build.0 = Debug|Any CPU
+		{9AA47C1F-2FF3-48F4-8E88-1B91E2DDFAD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AA47C1F-2FF3-48F4-8E88-1B91E2DDFAD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AA47C1F-2FF3-48F4-8E88-1B91E2DDFAD2}.Release|x64.ActiveCfg = Release|Any CPU
+		{9AA47C1F-2FF3-48F4-8E88-1B91E2DDFAD2}.Release|x64.Build.0 = Release|Any CPU
+		{9AA47C1F-2FF3-48F4-8E88-1B91E2DDFAD2}.Release|x86.ActiveCfg = Release|Any CPU
+		{9AA47C1F-2FF3-48F4-8E88-1B91E2DDFAD2}.Release|x86.Build.0 = Release|Any CPU
+		{C3518FC0-881D-458B-A0E2-D687B5838D24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3518FC0-881D-458B-A0E2-D687B5838D24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3518FC0-881D-458B-A0E2-D687B5838D24}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C3518FC0-881D-458B-A0E2-D687B5838D24}.Debug|x64.Build.0 = Debug|Any CPU
+		{C3518FC0-881D-458B-A0E2-D687B5838D24}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C3518FC0-881D-458B-A0E2-D687B5838D24}.Debug|x86.Build.0 = Debug|Any CPU
+		{C3518FC0-881D-458B-A0E2-D687B5838D24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3518FC0-881D-458B-A0E2-D687B5838D24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3518FC0-881D-458B-A0E2-D687B5838D24}.Release|x64.ActiveCfg = Release|Any CPU
+		{C3518FC0-881D-458B-A0E2-D687B5838D24}.Release|x64.Build.0 = Release|Any CPU
+		{C3518FC0-881D-458B-A0E2-D687B5838D24}.Release|x86.ActiveCfg = Release|Any CPU
+		{C3518FC0-881D-458B-A0E2-D687B5838D24}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
